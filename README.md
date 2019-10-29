@@ -1,1 +1,1 @@
-# fb
+# programowanie funkcyjne lab
