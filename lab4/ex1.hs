@@ -8,7 +8,10 @@ polarToCartesian' :: Floating a => PolarCoord' a -> CartesianCoord' a
 polarToCartesian' (r, phi) = (r * cos phi, r * sin phi)
 
 newtype CartesianCoord'' a = MkCartesianCoord'' (a,a)
-newtype PolarCoord'' a = MkPoldarCoord'' (a,a)
+newtype PolarCoord'' a = MkPolarCoord'' (a,a)
 
 polarToCartesian'' :: Floating a => PolarCoord'' a -> CartesianCoord'' a
-polarToCartesian'' (MkPoldarCoord'' (r, phi)) = MkCartesianCoord'' (r * cos phi, r * sin phi)
+polarToCartesian'' (MkPolarCoord'' (r, phi)) = MkCartesianCoord'' (r * cos phi, r * sin phi)
+
+personInfoToString :: (String,String,String) -> String
+personInfoToString (nm,snm,addr) = "name: " ++ nm ++ ", surname: " ++ snm ++ ", address: " ++ addr 
