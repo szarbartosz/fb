@@ -18,4 +18,4 @@ parse2Ints s = do
 --parseInt :: String -> Maybe (Int, [Char])
 --parseSep :: String -> Maybe ([Char], [Char]) 
 
-parse2Ints = 
+parse2Ints = parseInt s >>= \(i1, s1) -> parseSep s1 >>= \(_, s2) -> parseInt s2 >>= \(i2,s3) -> let minVal = 10 in return (max i1 minVal, max i2 minVal, s3)
